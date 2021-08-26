@@ -1,6 +1,6 @@
 # GiacobbeNero
 This is a simple Blackjack bot for telegram.
-You can try it [@GiacobbeNero](https://telegram.dog/GiacobbeNero_bot)
+You can try it: [@GiacobbeNero](https://telegram.dog/GiacobbeNero_bot)
 
 ## 1. Updating of config file.
 Change 'hostname' and 'serverport' if it necessary.\
