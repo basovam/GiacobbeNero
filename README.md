@@ -3,7 +3,7 @@ This is a simple Blackjack bot for telegram.
 You can try it [@GiacobbeNero](https://telegram.dog/GiacobbeNero_bot)
 
 ## 1. Updating of config file.
-Replace ```bot_token``` in ```config.ini``` with your bot token.
+Replace `bot_token` in `config.ini` with your bot token.
 Change hostname and server port if in nessessary.
 Font file did not includet in repository. It avialable via link:
 https://github.com/opensourcedesign/fonts/blob/master/gnu-freefont_freesans/FreeSansBold.ttf
