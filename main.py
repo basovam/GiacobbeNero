@@ -170,6 +170,7 @@ async def post_handler(request):
 			params['reply_markup'] = buttons_list
 			files = {'photo': open('PNG/'+table_file_name, 'rb')}
 			response = requests.post(BOT_REQUEST_URL + 'sendPhoto', files=files, data=params)
+			files['photo'].close()
 			os.remove('PNG/'+table_file_name)
 		elif (request_json['callback_query']['data'].split(';')[0] == 'S'):
 			dealer_cards,player_cards,dealer_game_score,player_game_score = data_string_parser(request_json['callback_query']['data'])
@@ -187,6 +188,7 @@ async def post_handler(request):
 			params['media'] = json.dumps({'type': 'photo', 'media': 'attach://media'})
 			files = {'media': open('PNG/'+png_file_name, 'rb')}
 			response = requests.post(BOT_REQUEST_URL + 'editMessageMedia', files=files, data=params)
+			files['media'].close()
 			os.remove('PNG/'+png_file_name)
 		elif (request_json['callback_query']['data'].split(';')[0] == 'H'):
 			dealer_cards,player_cards,dealer_game_score,player_game_score = data_string_parser(request_json['callback_query']['data'])
@@ -206,6 +208,7 @@ async def post_handler(request):
 			params['media'] = json.dumps({'type': 'photo', 'media': 'attach://media'})
 			files = {'media': open('PNG/'+png_file_name, 'rb')}
 			response = requests.post(BOT_REQUEST_URL + 'editMessageMedia', files=files, data=params)
+			files['media'].close()
 			os.remove('PNG/'+png_file_name)
 		elif (request_json['callback_query']['data'].split(';')[0] == 'Next'):
 			buttons_list,table_file_name = new_game(request_json['callback_query']['data'],request_json['callback_query']['message']['chat']['id'])
@@ -213,6 +216,7 @@ async def post_handler(request):
 			params['media'] = json.dumps({'type': 'photo', 'media': 'attach://media'})
 			files = {'media': open('PNG/'+table_file_name, 'rb')}
 			response = requests.post(BOT_REQUEST_URL + 'editMessageMedia', files=files, data=params)
+			files['media'].close()
 			os.remove('PNG/'+table_file_name)
 		response = requests.post(BOT_REQUEST_URL + 'answerCallbackQuery', data={'callback_query_id': request_json['callback_query']['id']})
 	return web.Response()
