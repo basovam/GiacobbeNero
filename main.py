@@ -26,8 +26,8 @@ help_text += '/help - Command list.'
 
 etc_text = 'This bot is support only default commands /start and /help.'
 
-list_cards = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-list_suit = ['C', 'D', 'H', 'S']
+list_cards = ('A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K')
+list_suit = ('C', 'D', 'H', 'S')
 
 def card_list_to_string(card_list):
 	card_string = ''
